@@ -10,17 +10,19 @@ import (
 	"log"
 	"net/http"
 	"server/handlers"
-	"math/rand"
-	"time"
+	// Use rand and  time for testing
+	// "math/rand"
+	// "time"
 )
 
 
 
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
-	var port int = rand.Intn(10) + 8000
-	// const port int = 8080
+	// Use rand and  time for testing
+	// rand.Seed(time.Now().UnixNano())
+	// var port int = rand.Intn(10) + 8000
+	const port int = 8080
 	http.HandleFunc("/person", handlers.HandlePerson)
 	fmt.Println("Listening on  port ", port)
 
