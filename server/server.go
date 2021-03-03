@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"server/handlers"
+	"strconv"
 	// Use rand and  time for testing
 	// "math/rand"
 	// "time"
@@ -26,10 +27,9 @@ func main() {
 	http.HandleFunc("/person", handlers.HandlePerson)
 	fmt.Println("Listening on  port ", port)
 
-	colonPort := fmt.Sprint(":", port)
-	fmt.Println(colonPort)
-	http.ListenAndServe(colonPort, nil)
-
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), nil))
+	// fmt.Println(colonPort)
+	// http.ListenAndServe(colonPort, nil)
+	// https://egel.github.io/development/2018/06/16/accept-incoming-network-connections.html
+	log.Fatal(http.ListenAndServe(("localhost:" + strconv.Itoa(port)), nil))
 }
 

@@ -52,7 +52,7 @@ func personGet(w http.ResponseWriter, r *http.Request) {
 	if personName == "" {
 		http.Error(w, "you must provide a name, e.g. \"/person&name=john\"", http.StatusBadRequest)
 	}
-	res := fmt.Sprintln("Received a GET request for", personName)
+	res := fmt.Sprintln("Received a GET request for (changeme - uuuu) ", personName)
 	w.Write([]byte(res))
 }
 
